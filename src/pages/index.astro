@@ -8,9 +8,29 @@ import ParallaxImage from '../components/ParallaxImage.astro';
 import Gallery from '../components/Gallery.astro';
 import Timeline from '../components/Timeline.astro';
 import MapRoute from '../components/MapRoute.astro';
+import FullscreenHero from '../components/FullscreenHero.astro';
+import PinnedQuote from '../components/PinnedQuote.astro';
+import ImageReveal from '../components/ImageReveal.astro';
 import chaptersData from '../data/chapters.json';
 
-// Chapters that get a timeline (2: Cuba events, 7: last years)
+const chapters = chaptersData.chapters;
+
+// Helper to get hero image for a chapter
+function getHeroImage(ch: any) {
+  return ch.images?.find((img: any) => img.usage === 'hero') || ch.images?.[0];
+}
+
+// Helper to get inline images
+function getInlineImages(ch: any) {
+  return ch.images?.filter((img: any) => img.usage === 'inline') || [];
+}
+
+// Helper to get gallery images
+function getGalleryImages(ch: any) {
+  return ch.images?.filter((img: any) => img.usage === 'gallery') || [];
+}
+
+// Chapters that get a timeline
 const timelineChapters = [2, 7];
 ---
 
@@ -19,68 +39,173 @@ const timelineChapters = [2, 7];
     <Hero />
     <ChapterNav />
 
-    {chaptersData.chapters.map((ch) => (
-      <Chapter
-        id={ch.id}
-        number={ch.number}
-        title={ch.title}
-        subtitle={ch.subtitle}
-        accentColor={ch.accentColor}
-        bgColor={ch.bgColor}
-      >
-        {ch.images?.filter(img => img.usage === 'hero' || img.usage === 'parallax').slice(0, 1).map(img => (
-          <ParallaxImage
-            src={img.url}
-            alt={img.alt}
-            width={img.width}
-            height={img.height}
-          />
-        ))}
+    {chapters.map((ch) => {
+      const heroImg = getHeroImage(ch);
+      const inlineImgs = getInlineImages(ch);
+      const galleryImgs = getGalleryImages(ch);
 
-        {ch.narrative.map((para) => (
-          <p data-animate="fade-up">{para}</p>
-        ))}
+      return (
+        <>
+          {/* === Fullscreen Hero for each chapter === */}
+          {heroImg && (
+            <FullscreenHero
+              src={heroImg.url}
+              alt={heroImg.alt}
+              number={ch.number}
+              title={ch.title}
+              subtitle={ch.subtitle}
+              accentColor={ch.accentColor}
+            />
+          )}
 
-        {ch.number === 1 && <MapRoute mapId="atlantic" />}
-        {ch.number === 4 && <MapRoute mapId="mexico" />}
+          {/* === Chapter content === */}
+          <Chapter
+            id={ch.id}
+            number={ch.number}
+            title={ch.title}
+            subtitle={ch.subtitle}
+            accentColor={ch.accentColor}
+            bgColor={ch.bgColor}
+          >
+            {/* Lead paragraph */}
+            {ch.narrative.length > 0 && (
+              <p class="lead-paragraph" data-animate="fade-up">{ch.narrative[0]}</p>
+            )}
 
-        {ch.quotes?.map(q => (
-          <Quote text={q.text} author={q.author} source={q.source} />
-        ))}
-
-        {ch.number === 5 && (
-          <div class="city-comparison" data-animate="fade-up">
-            <h3 style="color: var(--accent-gold); margin-bottom: 2rem; text-align: center;">Población circa 1519</h3>
-            <div class="city-comparison__grid">
-              <div class="city-comparison__item">
-                <div class="city-comparison__bar" style="height: 200px; background: var(--accent-gold);"></div>
-                <span class="city-comparison__name">Tenochtitlán</span>
-                <span class="city-comparison__pop">~200,000</span>
+            {/* Curiosity sidebar + second paragraph in two-column layout */}
+            {ch.narrative.length > 1 && inlineImgs.length > 0 ? (
+              <div class="two-col" data-animate="fade-up">
+                <div class="two-col__text">
+                  <p>{ch.narrative[1]}</p>
+                </div>
+                <div class="two-col__image">
+                  <img
+                    src={inlineImgs[0].url}
+                    alt={inlineImgs[0].alt}
+                    loading="lazy"
+                    decoding="async"
+                    onerror="this.style.display='none'"
+                  />
+                </div>
               </div>
-              <div class="city-comparison__item">
-                <div class="city-comparison__bar" style="height: 100px; background: var(--accent-stone);"></div>
-                <span class="city-comparison__name">París</span>
-                <span class="city-comparison__pop">~100,000</span>
+            ) : ch.narrative.length > 1 ? (
+              <p data-animate="fade-up">{ch.narrative[1]}</p>
+            ) : null}
+
+            {/* Remaining paragraphs */}
+            {ch.narrative.slice(2).map((para: string, i: number) => (
+              <>
+                {i === 0 && inlineImgs.length > 1 ? (
+                  <div class="two-col two-col--reverse" data-animate="fade-up">
+                    <div class="two-col__image">
+                      <img
+                        src={inlineImgs[1].url}
+                        alt={inlineImgs[1].alt}
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.style.display='none'"
+                      />
+                    </div>
+                    <div class="two-col__text">
+                      <p>{para}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <p data-animate="fade-up">{para}</p>
+                )}
+              </>
+            ))}
+
+            {/* Maps */}
+            {ch.number === 1 && <MapRoute mapId="atlantic" />}
+            {ch.number === 4 && <MapRoute mapId="mexico" />}
+
+            {/* === Chapter 4: Pinned Quote — Bernal seeing Tenochtitlan === */}
+            {ch.number === 4 && (
+              <PinnedQuote
+                text="Y desde que vimos tantas ciudades y villas pobladas en el agua, y en tierra firme otras grandes poblazones, y aquella calzada tan derecha y por nivel como iba a México, nos quedamos admirados, y decíamos que parecía a las cosas de encantamiento que cuentan en el libro de Amadís, por las grandes torres y cúes y edificios que tenían dentro en el agua, y todos de calicanto, y aun algunos de nuestros soldados decían que si aquello que veían si era entre sueños. Y no es de maravillar que yo escriba aquí de esta manera, porque hay mucho que ponderar en ello que no sé cómo lo cuente: ver cosas nunca oídas, ni aun soñadas, como veíamos."
+                author="Bernal Díaz del Castillo"
+                source="Historia verdadera de la conquista de la Nueva España, Cap. LXXXVII"
+              />
+            )}
+
+            {/* === Chapter 5: Image Reveal — Tenochtitlan comparison === */}
+            {ch.number === 5 && (
+              <ImageReveal
+                topSrc="https://upload.wikimedia.org/wikipedia/commons/c/c3/Map_of_Tenochtitlan%2C_1524.jpg"
+                bottomSrc="https://upload.wikimedia.org/wikipedia/commons/6/6e/The_great_Tenochtitlan.JPG"
+                topAlt="Mapa de Tenochtitlán, 1524"
+                bottomAlt="La Gran Tenochtitlán, mural de Diego Rivera"
+              />
+            )}
+
+            {/* City comparison infographic for chapter 5 */}
+            {ch.number === 5 && (
+              <div class="city-comparison" data-animate="fade-up">
+                <h3 style="color: var(--accent-gold); margin-bottom: 2rem; text-align: center;">Población circa 1519</h3>
+                <div class="city-comparison__grid">
+                  <div class="city-comparison__item">
+                    <div class="city-comparison__bar" style="height: 200px; background: var(--accent-gold);"></div>
+                    <span class="city-comparison__name">Tenochtitlán</span>
+                    <span class="city-comparison__pop">~200,000</span>
+                  </div>
+                  <div class="city-comparison__item">
+                    <div class="city-comparison__bar" style="height: 100px; background: var(--accent-stone);"></div>
+                    <span class="city-comparison__name">París</span>
+                    <span class="city-comparison__pop">~100,000</span>
+                  </div>
+                  <div class="city-comparison__item">
+                    <div class="city-comparison__bar" style="height: 50px; background: var(--accent-stone);"></div>
+                    <span class="city-comparison__name">Londres</span>
+                    <span class="city-comparison__pop">~50,000</span>
+                  </div>
+                </div>
               </div>
-              <div class="city-comparison__item">
-                <div class="city-comparison__bar" style="height: 50px; background: var(--accent-stone);"></div>
-                <span class="city-comparison__name">Londres</span>
-                <span class="city-comparison__pop">~50,000</span>
-              </div>
-            </div>
+            )}
+
+            {/* Regular quotes (skip the ones used as PinnedQuote) */}
+            {ch.quotes?.map((q: any) => {
+              // Skip quotes that are handled by PinnedQuote
+              if (ch.number === 4 && q.text.startsWith('Y desde que vimos')) return null;
+              if (ch.number === 7 && q.text.startsWith('Señor Malinche')) return null;
+              return <Quote text={q.text} author={q.author} source={q.source} />;
+            })}
+
+            {/* === Chapter 7: Pinned Quote — Cuauhtémoc's surrender === */}
+            {ch.number === 7 && (
+              <PinnedQuote
+                text="Señor Malinche, ya he hecho lo que estoy obligado en defensa de mi ciudad y vasallos, y no puedo más; y pues vengo por fuerza y preso ante tu persona y poder, toma ese puñal que tienes en la cinta y mátame luego con él."
+                author="Cuauhtémoc (según Bernal Díaz del Castillo)"
+                source="Historia verdadera de la conquista de la Nueva España, Cap. CLVI"
+              />
+            )}
+
+            {/* Curiosities as sidebar callouts */}
+            {ch.curiosities?.length > 0 && (
+              <aside class="curiosities" data-animate="fade-up">
+                <h3 class="curiosities__title">Curiosidades</h3>
+                {ch.curiosities.slice(0, 2).map((c: string) => (
+                  <p class="curiosities__item">{c}</p>
+                ))}
+              </aside>
+            )}
+
+            {/* Timeline */}
+            {timelineChapters.includes(ch.number) && ch.keyDates?.length > 0 && (
+              <Timeline dates={ch.keyDates} />
+            )}
+
+            {/* Gallery */}
+            {galleryImgs.length > 0 && <Gallery images={galleryImgs} />}
+          </Chapter>
+
+          {/* === Chapter Transition === */}
+          <div class="chapter-transition" aria-hidden="true">
+            <div class="chapter-transition__line"></div>
           </div>
-        )}
-
-        {timelineChapters.includes(ch.number) && ch.keyDates?.length > 0 && (
-          <Timeline dates={ch.keyDates} />
-        )}
-
-        {(() => {
-          const galleryImages = ch.images?.filter(img => img.usage === 'gallery');
-          return galleryImages?.length > 0 ? <Gallery images={galleryImages} /> : null;
-        })()}
-      </Chapter>
-    ))}
+        </>
+      );
+    })}
 
     <footer class="site-footer">
       <p>Imágenes de dominio público vía Wikimedia Commons</p>

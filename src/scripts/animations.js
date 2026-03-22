@@ -155,21 +155,19 @@ function initChapterNav() {
     });
   }
 
-  // Smooth scroll via GSAP (scrollIntoView conflicts with ScrollTrigger)
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetSelector = link.getAttribute('href');
-      const target = document.querySelector(targetSelector);
-      if (target) {
-        const y = target.getBoundingClientRect().top + window.scrollY;
-        gsap.to(window, {
-          scrollTo: { y: y, autoKill: false },
-          duration: 1.2,
-          ease: 'power2.inOut',
-        });
-      }
-    });
+  // Smooth scroll on nav click
+  nav.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const targetId = link.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      // Use window.scrollTo for maximum compatibility
+      const top = target.offsetTop;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   });
 }
 
@@ -354,11 +352,136 @@ function initMapRoutes() {
   });
 }
 
+// === NEW: Fullscreen Hero Animations ===
+function initFullscreenHeroes() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('[data-fs-hero]').forEach((hero) => {
+    const number = hero.querySelector('.fs-hero__number');
+    const title = hero.querySelector('.fs-hero__title');
+    const subtitle = hero.querySelector('.fs-hero__subtitle');
+    const image = hero.querySelector('.fs-hero__image');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: 1,
+      },
+    });
+
+    tl.to(number, { opacity: 1, duration: 0.3 })
+      .to(title, { opacity: 1, y: 0, duration: 0.5 }, '-=0.1')
+      .to(subtitle, { opacity: 1, duration: 0.3 }, '-=0.2');
+
+    // Slow zoom on the hero image
+    if (image) {
+      gsap.to(image, {
+        scale: 1.1,
+        scrollTrigger: {
+          trigger: hero,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      });
+    }
+  });
+}
+
+// === NEW: Pinned Quote word-by-word reveal ===
+function initPinnedQuotes() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('[data-pinned-quote]').forEach((section) => {
+    const words = section.querySelectorAll('[data-word]');
+    const attribution = section.querySelector('.pinned-quote__attribution');
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const totalWords = words.length;
+
+        words.forEach((word, i) => {
+          const wordThreshold = i / totalWords;
+          const wordProgress = (progress * 1.5) - wordThreshold;
+          if (wordProgress > 0) {
+            word.classList.add('revealed');
+          } else {
+            word.classList.remove('revealed');
+          }
+        });
+
+        // Show attribution after 80% of words are revealed
+        if (attribution) {
+          if (progress > 0.7) {
+            attribution.classList.add('visible');
+          } else {
+            attribution.classList.remove('visible');
+          }
+        }
+      },
+    });
+  });
+}
+
+// === NEW: Image Reveal (mouse-driven clip-path) ===
+function initImageReveal() {
+  document.querySelectorAll('[data-image-reveal]').forEach((container) => {
+    const topLayer = container.querySelector('[data-reveal-top]');
+    if (!topLayer) return;
+
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      topLayer.style.clipPath = `circle(120px at ${x}px ${y}px)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      topLayer.style.clipPath = 'circle(0px at 50% 50%)';
+    });
+  });
+}
+
+// === NEW: Chapter Transition line-draw effect ===
+function initChapterTransitions() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('.chapter-transition').forEach((transition) => {
+    const line = transition.querySelector('.chapter-transition__line');
+    if (!line) return;
+
+    gsap.fromTo(line,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: transition,
+          start: 'top 85%',
+          end: 'top 50%',
+          scrub: 1,
+        },
+      }
+    );
+  });
+}
+
 // Export init function
 export function initAnimations() {
   initHeroAnimation();
+  initFullscreenHeroes();
   initChapterAnimations();
   initChapterNav();
   initChapterEffects();
   initMapRoutes();
+  initPinnedQuotes();
+  initImageReveal();
+  initChapterTransitions();
 }

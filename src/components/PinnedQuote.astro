@@ -1,0 +1,104 @@
+---
+interface Props {
+  text: string;
+  author: string;
+  source: string;
+}
+const { text, author, source } = Astro.props;
+
+// Split into words for word-by-word animation
+const words = text.split(' ');
+---
+
+<div class="pinned-quote" data-pinned-quote>
+  <div class="pinned-quote__inner">
+    <blockquote class="pinned-quote__text">
+      <p>
+        {words.map((word, i) => (
+          <span class="pinned-quote__word" data-word={i} style={`--word-index: ${i}`}>
+            {word}{' '}
+          </span>
+        ))}
+      </p>
+    </blockquote>
+    <figcaption class="pinned-quote__attribution">
+      <span class="pinned-quote__author">&mdash; {author}</span>
+      <cite class="pinned-quote__source">{source}</cite>
+    </figcaption>
+  </div>
+</div>
+
+<style>
+  .pinned-quote {
+    position: relative;
+    height: 200vh; /* gives scroll room for the pin */
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .pinned-quote__inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    background: radial-gradient(ellipse at center, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
+  }
+
+  .pinned-quote__text {
+    font-family: var(--font-quote);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    line-height: 1.6;
+    color: var(--text-primary);
+    max-width: 800px;
+    border: none;
+    padding: 0;
+  }
+
+  .pinned-quote__word {
+    display: inline;
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+  }
+
+  .pinned-quote__word.revealed {
+    opacity: 1;
+  }
+
+  .pinned-quote__attribution {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .pinned-quote__attribution.visible {
+    opacity: 1;
+  }
+
+  .pinned-quote__author {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.1em;
+  }
+
+  .pinned-quote__source {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: normal;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pinned-quote__word { opacity: 1; }
+    .pinned-quote__attribution { opacity: 1; }
+  }
+</style>

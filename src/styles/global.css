@@ -284,3 +284,109 @@ blockquote {
 .site-footer__back-to-top:hover {
   color: var(--text-primary);
 }
+
+/* === Lead Paragraph === */
+.lead-paragraph {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  line-height: 1.8;
+  color: var(--text-primary);
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+/* === Two Column Layout === */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin: 3rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.two-col--reverse {
+  direction: rtl;
+}
+
+.two-col--reverse > * {
+  direction: ltr;
+}
+
+.two-col__text p {
+  margin-bottom: 1rem;
+}
+
+.two-col__image img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .two-col--reverse {
+    direction: ltr;
+  }
+}
+
+/* === Section Spacer === */
+.section-spacer {
+  height: 15vh;
+}
+
+/* === Chapter Transition === */
+.chapter-transition {
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chapter-transition__line {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  transform-origin: center;
+  transform: scaleX(0);
+}
+
+/* === Curiosities Sidebar === */
+.curiosities {
+  margin: 3rem 0;
+  padding: 2rem;
+  border-left: 2px solid var(--accent-gold);
+  background: rgba(201, 168, 76, 0.04);
+  border-radius: 0 4px 4px 0;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.curiosities__title {
+  color: var(--accent-gold);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.curiosities__item {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.curiosities__item:last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .two-col,
+  .curiosities {
+    opacity: 1;
+    transform: none;
+  }
+}
