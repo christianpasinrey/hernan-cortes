@@ -6,8 +6,6 @@ import Chapter from '../components/Chapter.astro';
 import Quote from '../components/Quote.astro';
 import ParallaxImage from '../components/ParallaxImage.astro';
 import chaptersData from '../data/chapters.json';
-
-const chapter1 = chaptersData.chapters[0];
 ---
 
 <Base>
@@ -15,31 +13,33 @@ const chapter1 = chaptersData.chapters[0];
     <Hero />
     <ChapterNav />
 
-    <Chapter
-      id={chapter1.id}
-      number={chapter1.number}
-      title={chapter1.title}
-      subtitle={chapter1.subtitle}
-      accentColor={chapter1.accentColor}
-      bgColor={chapter1.bgColor}
-    >
-      {chapter1.images?.filter(img => img.usage === 'hero' || img.usage === 'parallax').slice(0, 1).map(img => (
-        <ParallaxImage
-          src={img.url}
-          alt={img.alt}
-          width={img.width}
-          height={img.height}
-        />
-      ))}
+    {chaptersData.chapters.map((ch) => (
+      <Chapter
+        id={ch.id}
+        number={ch.number}
+        title={ch.title}
+        subtitle={ch.subtitle}
+        accentColor={ch.accentColor}
+        bgColor={ch.bgColor}
+      >
+        {ch.images?.filter(img => img.usage === 'hero' || img.usage === 'parallax').slice(0, 1).map(img => (
+          <ParallaxImage
+            src={img.url}
+            alt={img.alt}
+            width={img.width}
+            height={img.height}
+          />
+        ))}
 
-      {chapter1.narrative.map((para) => (
-        <p data-animate="fade-up">{para}</p>
-      ))}
+        {ch.narrative.map((para) => (
+          <p data-animate="fade-up">{para}</p>
+        ))}
 
-      {chapter1.quotes?.map(q => (
-        <Quote text={q.text} author={q.author} source={q.source} />
-      ))}
-    </Chapter>
+        {ch.quotes?.map(q => (
+          <Quote text={q.text} author={q.author} source={q.source} />
+        ))}
+      </Chapter>
+    ))}
   </main>
 
   <script>
