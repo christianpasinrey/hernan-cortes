@@ -1,0 +1,51 @@
+---
+interface Props {
+  text: string;
+  author: string;
+  source: string;
+}
+
+const { text, author, source } = Astro.props;
+---
+
+<figure class="quote" data-animate="fade-up">
+  <blockquote>
+    <p>"{text}"</p>
+  </blockquote>
+  <figcaption class="quote__attribution">
+    <span class="quote__author">— {author}</span>
+    <cite class="quote__source">{source}</cite>
+  </figcaption>
+</figure>
+
+<style>
+  .quote {
+    margin: 3rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .quote__attribution {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .quote__author {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.1em;
+  }
+
+  .quote__source {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: normal;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .quote { opacity: 1; transform: none; }
+  }
+</style>

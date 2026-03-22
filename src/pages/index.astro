@@ -1,11 +1,43 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import Chapter from '../components/Chapter.astro';
+import Quote from '../components/Quote.astro';
+import ParallaxImage from '../components/ParallaxImage.astro';
+import chaptersData from '../data/chapters.json';
+
+const chapter1 = chaptersData.chapters[0];
 ---
 
 <Base>
   <main>
     <Hero />
+
+    <Chapter
+      id={chapter1.id}
+      number={chapter1.number}
+      title={chapter1.title}
+      subtitle={chapter1.subtitle}
+      accentColor={chapter1.accentColor}
+      bgColor={chapter1.bgColor}
+    >
+      {chapter1.images?.filter(img => img.usage === 'hero' || img.usage === 'parallax').slice(0, 1).map(img => (
+        <ParallaxImage
+          src={img.url}
+          alt={img.alt}
+          width={img.width}
+          height={img.height}
+        />
+      ))}
+
+      {chapter1.narrative.map((para) => (
+        <p data-animate="fade-up">{para}</p>
+      ))}
+
+      {chapter1.quotes?.map(q => (
+        <Quote text={q.text} author={q.author} source={q.source} />
+      ))}
+    </Chapter>
   </main>
 
   <script>

@@ -1,0 +1,105 @@
+---
+interface Props {
+  id: string;
+  number: number;
+  title: string;
+  subtitle: string;
+  accentColor?: string;
+  bgColor?: string;
+}
+
+const {
+  id,
+  number,
+  title,
+  subtitle,
+  accentColor = '--accent-gold',
+  bgColor = '--bg-primary',
+} = Astro.props;
+---
+
+<article
+  class="chapter"
+  id={id}
+  data-chapter={number}
+  style={`--chapter-accent: var(${accentColor}); --chapter-bg: var(${bgColor});`}
+  aria-label={`Capítulo ${number}: ${title}`}
+>
+  <div class="chapter__header" data-animate="fade-up">
+    <span class="chapter__number" aria-hidden="true">{String(number).padStart(2, '0')}</span>
+    <div class="chapter__title-group">
+      <h2 class="chapter__title">{title}</h2>
+      <p class="chapter__subtitle">{subtitle}</p>
+    </div>
+    <div class="chapter__separator" aria-hidden="true"></div>
+  </div>
+
+  <div class="chapter__content">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .chapter {
+    position: relative;
+    min-height: 100vh;
+    padding: 8rem 2rem 6rem;
+    background-color: var(--chapter-bg);
+  }
+
+  .chapter__header {
+    max-width: var(--max-width);
+    margin: 0 auto 4rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .chapter__number {
+    font-family: var(--font-heading);
+    font-size: clamp(6rem, 15vw, 12rem);
+    color: var(--chapter-accent);
+    opacity: 0.08;
+    position: absolute;
+    top: -3rem;
+    left: -1rem;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .chapter__title-group {
+    position: relative;
+    z-index: 1;
+  }
+
+  .chapter__title {
+    color: var(--chapter-accent);
+  }
+
+  .chapter__subtitle {
+    font-family: var(--font-quote);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  .chapter__separator {
+    width: 60px;
+    height: 2px;
+    background: var(--chapter-accent);
+    margin-top: 1.5rem;
+    opacity: 0.6;
+  }
+
+  .chapter__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chapter__header { opacity: 1; transform: none; }
+  }
+</style>
