@@ -477,7 +477,7 @@ function initChapterTransitions() {
 // Export init function — each wrapped in try/catch so one failure doesn't block others
 export function initAnimations() {
   const fns = [
-    initChapterNav,        // Nav FIRST — most critical for interactivity
+    // initChapterNav removed — nav has its own self-contained script in ChapterNav.astro
     initHeroAnimation,
     initFullscreenHeroes,
     initChapterAnimations,
