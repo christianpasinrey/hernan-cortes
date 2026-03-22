@@ -5,6 +5,7 @@ import ChapterNav from '../components/ChapterNav.astro';
 import Chapter from '../components/Chapter.astro';
 import Quote from '../components/Quote.astro';
 import ParallaxImage from '../components/ParallaxImage.astro';
+import Gallery from '../components/Gallery.astro';
 import chaptersData from '../data/chapters.json';
 ---
 
@@ -38,12 +39,19 @@ import chaptersData from '../data/chapters.json';
         {ch.quotes?.map(q => (
           <Quote text={q.text} author={q.author} source={q.source} />
         ))}
+
+        {(() => {
+          const galleryImages = ch.images?.filter(img => img.usage === 'gallery');
+          return galleryImages?.length > 0 ? <Gallery images={galleryImages} /> : null;
+        })()}
       </Chapter>
     ))}
   </main>
 
   <script>
     import { initAnimations } from '../scripts/animations.js';
+    import { initGalleries } from '../scripts/gallery.js';
     initAnimations();
+    initGalleries();
   </script>
 </Base>

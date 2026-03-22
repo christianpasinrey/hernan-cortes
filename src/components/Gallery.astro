@@ -1,0 +1,149 @@
+---
+interface Props {
+  images: Array<{ url: string; alt: string; width?: number; height?: number }>;
+}
+
+const { images } = Astro.props;
+---
+
+<div class="gallery" data-gallery>
+  <div class="gallery__grid">
+    {images.map((img, i) => (
+      <button class="gallery__thumb" data-gallery-index={i} aria-label={`Ver imagen: ${img.alt}`}>
+        <img
+          src={img.url}
+          alt={img.alt}
+          width={img.width || 400}
+          height={img.height || 300}
+          loading="lazy"
+          decoding="async"
+          onerror="this.parentElement.style.display='none'"
+        />
+      </button>
+    ))}
+  </div>
+
+  <!-- Lightbox -->
+  <div class="gallery__lightbox" data-gallery-lightbox role="dialog" aria-modal="true" aria-label="Galería de imágenes" hidden>
+    <button class="gallery__close" data-gallery-close aria-label="Cerrar galería">&times;</button>
+    <button class="gallery__prev" data-gallery-prev aria-label="Imagen anterior">&#8249;</button>
+    <button class="gallery__next" data-gallery-next aria-label="Imagen siguiente">&#8250;</button>
+    <div class="gallery__lightbox-content">
+      <img class="gallery__lightbox-img" data-gallery-img src="" alt="" />
+      <p class="gallery__lightbox-caption" data-gallery-caption></p>
+    </div>
+    <div class="gallery__counter" data-gallery-counter></div>
+  </div>
+</div>
+
+<style>
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+
+  .gallery__thumb {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: none;
+    overflow: hidden;
+    border-radius: 2px;
+    aspect-ratio: 4/3;
+  }
+
+  .gallery__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s var(--ease-default);
+  }
+
+  .gallery__thumb:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Lightbox */
+  .gallery__lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .gallery__lightbox:not([hidden]) {
+    opacity: 1;
+  }
+
+  .gallery__lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery__lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .gallery__lightbox-caption {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .gallery__close,
+  .gallery__prev,
+  .gallery__next {
+    position: absolute;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem;
+    z-index: 1001;
+    transition: color 0.2s;
+  }
+
+  .gallery__close:hover,
+  .gallery__prev:hover,
+  .gallery__next:hover {
+    color: var(--accent-gold);
+  }
+
+  .gallery__close { top: 1rem; right: 1rem; font-size: 2.5rem; }
+  .gallery__prev { left: 1rem; top: 50%; transform: translateY(-50%); font-size: 3rem; }
+  .gallery__next { right: 1rem; top: 50%; transform: translateY(-50%); font-size: 3rem; }
+
+  .gallery__counter {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    .gallery__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+    .gallery__prev, .gallery__next { font-size: 2rem; }
+  }
+</style>
