@@ -1,0 +1,679 @@
+{
+  "chapters": [
+    {
+      "id": "chapter-1",
+      "number": 1,
+      "title": "El hijo de Extremadura",
+      "subtitle": "1485 — 1511",
+      "accentColor": "--accent-gold",
+      "bgColor": "--bg-primary",
+      "narrative": [
+        "En el año de gracia de 1485, en la villa de Medellín, enclavada entre las colinas ocres de Extremadura, nació Hernán Cortés Monroy Pizarro Altamirano. Su padre, Martín Cortés de Monroy, era un hidalgo de linaje distinguido pero de bolsillos flacos —como tantos en aquella Castilla que soñaba con glorias que no podía costear—. Su madre, Catalina Pizarro Altamirano, era prima segunda de quien décadas después conquistaría el Perú: Francisco Pizarro. El niño creció entre castillos en ruinas y leyendas de la Reconquista, respirando el polvo de una tierra que forjaba conquistadores como el hierro forja espadas.",
+        "A los catorce años, sus padres lo enviaron a Salamanca para que estudiara Leyes, confiando en que la pluma le daría lo que la espada no podía prometer a un hidalgo sin fortuna. Cortés estudió latín con un tío suyo, aprendió las Siete Partidas de Alfonso X y se familiarizó con el derecho y la retórica —herramientas que más tarde usaría con una destreza que ningún profesor habría imaginado—. Pero dos años después, el joven abandonó los estudios. No era la toga lo que le llamaba, sino el horizonte.",
+        "De vuelta en Medellín, el muchacho era un torbellino de ambición sin cauce. Se dice que estuvo a punto de embarcarse con la expedición de Nicolás de Ovando en 1502, pero una caída nocturna desde un muro —mientras trepaba para visitar a una mujer casada— le dejó herido y le hizo perder el barco. El destino, sin embargo, sólo le estaba retrasando la cita. En 1504, con diecinueve años, Hernán Cortés cruzó por fin el Atlántico rumbo a La Española, la isla donde todo empezaba y nada era suficiente.",
+        "En Santo Domingo, el joven extremeño no tardó en hacerse notar. Se registró como vecino, recibió una encomienda y tierras, y trabajó como escribano del ayuntamiento de la villa de Azua. Pero la isla era pequeña para sus sueños. Cada barco que llegaba traía noticias de tierras más ricas hacia el oeste. Cortés observaba, escuchaba, aprendía. Mientras otros se conformaban con el oro que goteaba de las minas, él esperaba el momento exacto para dar el salto que cambiaría la historia."
+      ],
+      "quotes": [
+        {
+          "text": "Vino al mundo con poca riqueza pero de mucha hidalguía, y dicen que fue muy travieso cuando muchacho.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. CCIII"
+        },
+        {
+          "text": "Estudió leyes en Salamanca, que era grande latino y buen retórico, y sabía algo de las Siete Partidas.",
+          "author": "Francisco López de Gómara",
+          "source": "Historia general de las Indias, Cap. I"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "1485",
+          "event": "Nace Hernán Cortés en Medellín, Extremadura, hijo de los hidalgos Martín Cortés y Catalina Pizarro Altamirano"
+        },
+        {
+          "year": "1499",
+          "event": "Es enviado a Salamanca a estudiar Leyes y latín con su tío Francisco Núñez de Valera"
+        },
+        {
+          "year": "1501",
+          "event": "Abandona los estudios y regresa a Medellín, desoyendo los planes de sus padres"
+        },
+        {
+          "year": "1502",
+          "event": "Pierde la expedición de Nicolás de Ovando a causa de una lesión"
+        },
+        {
+          "year": "1504",
+          "event": "Embarca hacia La Española a los 19 años; se establece como escribano y encomendero en Azua"
+        },
+        {
+          "year": "1506-1511",
+          "event": "Vive en La Española, acumula experiencia como colono, escribano y conocedor de las leyes indianas"
+        }
+      ],
+      "curiosities": [
+        "Cortés fue pariente lejano de Francisco Pizarro, conquistador del Perú: ambos compartían la rama Pizarro Altamirano por línea materna. Extremadura produjo a los dos hombres que destruyeron los dos imperios más grandes del continente americano.",
+        "La famosa caída del muro en 1502 —según las crónicas, estaba escalando la pared de la casa de una mujer casada cuyo marido estaba ausente— casi le impide llegar nunca a América. De haber tomado ese barco, la historia de la conquista de México habría sido radicalmente diferente.",
+        "En Salamanca, Cortés no estudió en la Universidad propiamente dicha, sino con un tío que era bachiller en Leyes. Sin embargo, los dos años de formación jurídica le dieron una ventaja decisiva: sabía redactar documentos legales, fundar ciudades con validez jurídica y argumentar ante la Corona. La conquista de México se ganó tanto con tinta como con acero.",
+        "Al llegar a La Española en 1504, el gobernador Ovando le ofreció tierras y una encomienda de indios. El joven Cortés respondió que él no había venido a arar la tierra, sino a buscar oro. Ovando le replicó secamente que tendría más oro del que pensaba si trabajaba su tierra."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Castillo_de_Medellin1.JPG",
+          "alt": "Castillo de Medellín, Extremadura",
+          "usage": "hero",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Castillo_de_Medellin2.jpg",
+          "alt": "Vista del Castillo de Medellín",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Capit%C3%A1n_general%2C_Copia_de_un_retrato_de_Hern%C3%A1n_Cort%C3%A9s%2C_~1485_-_2-12-1547%2C_retrato_an%C3%B3nimo_%281525%29.jpg",
+          "alt": "Retrato anónimo de Hernán Cortés, c. 1525",
+          "usage": "inline",
+          "width": 800,
+          "height": 1000
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Grabado_de_Hern%C3%A1n_Cort%C3%A9s.jpg",
+          "alt": "Grabado antiguo de Hernán Cortés",
+          "usage": "gallery",
+          "width": 800,
+          "height": 1000
+        }
+      ]
+    },
+    {
+      "id": "chapter-2",
+      "number": 2,
+      "title": "La isla y la ambición",
+      "subtitle": "1511 — 1519",
+      "accentColor": "--accent-gold",
+      "bgColor": "--bg-primary",
+      "narrative": [
+        "En 1511, la noticia corrió por La Española como pólvora: Diego Velázquez de Cuéllar organizaba una expedición para conquistar Cuba. Cortés no lo dudó un instante. Se alistó bajo el mando de Velázquez y participó en la pacificación de la isla, demostrando una combinación de coraje militar y astucia política que llamó la atención de todos. Velázquez lo nombró alcalde de Santiago de Baracoa, la capital de la nueva colonia. Cortés había encontrado su trampolín.",
+        "Durante los años siguientes, Cortés prosperó en Cuba. Se casó con Catalina Suárez Marcaida —una unión que, según las crónicas, fue más política que romántica, y que le causaría problemas el resto de su vida—. Administró encomiendas, acumuló riqueza modesta y cultivó amistades estratégicas. Pero sobre todo, observó. Las expediciones de Francisco Hernández de Córdoba en 1517 y Juan de Grijalva en 1518 habían tocado las costas de una tierra inmensa al oeste, con ciudades de piedra, gentes vestidas con algodón y oro que circulaba con una abundancia desconocida en las islas. Los relatos encendieron la imaginación de toda Cuba.",
+        "Velázquez, gobernador ambicioso pero cauteloso, necesitaba un capitán para la nueva expedición. Tras considerar varias opciones, eligió a Cortés: un hombre capaz, carismático, que conocía las leyes y sabía mover voluntades. Fue un error calculado. Velázquez intuía que Cortés podía escapar a su control, pero apostó por su talento. La tensión entre ambos fue inmediata. Mientras Cortés invertía su fortuna personal en armar once naves y reclutar más de quinientos hombres, los enemigos del capitán susurraban al oído de Velázquez que aquel extremeño ambicioso tenía planes propios.",
+        "Las sospechas eran fundadas. El 18 de noviembre de 1518, Cortés recibió oficialmente las instrucciones de la expedición, pero en las semanas siguientes, Velázquez intentó revocarlo. Era demasiado tarde. Cortés aceleró los preparativos, reclutó a toda prisa hombres, caballos, armas y provisiones, y zarpó de Santiago de Cuba el 18 de noviembre —o el 10 de febrero de 1519, según las fuentes— antes de que la orden de arresto pudiera alcanzarlo. La leyenda estaba en marcha. Atrás quedaba un gobernador furioso; adelante, un mundo que nadie en Europa imaginaba."
+      ],
+      "quotes": [
+        {
+          "text": "Y como Hernán Cortés con aquellos caballeros que le favorecían lo supieron, y otras personas que le querían bien, le dijeron que mirase por sí, que se diese prisa a embarcar, que ya no era tiempo de otra cosa; porque el Velázquez estaba muy enojado y decía que no le había de dejar ir.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. XX"
+        },
+        {
+          "text": "Gastó todo lo que tenía y lo que pudo haber de sus amigos en la armada.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. XIX"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "1511",
+          "event": "Cortés participa en la conquista de Cuba bajo Diego Velázquez de Cuéllar"
+        },
+        {
+          "year": "1514",
+          "event": "Es nombrado alcalde de Santiago de Baracoa, capital de Cuba"
+        },
+        {
+          "year": "1514-1515",
+          "event": "Se casa con Catalina Suárez Marcaida, cuñada que le conecta políticamente con Velázquez"
+        },
+        {
+          "year": "1517",
+          "event": "Expedición de Hernández de Córdoba descubre Yucatán; primeras noticias de civilizaciones avanzadas en tierra firme"
+        },
+        {
+          "year": "1518",
+          "event": "Expedición de Juan de Grijalva confirma las riquezas del continente; Velázquez nombra a Cortés capitán de la tercera expedición"
+        },
+        {
+          "year": "Febrero 1519",
+          "event": "Cortés zarpa de Cuba con 11 naves, más de 500 hombres, 16 caballos y 14 piezas de artillería, desafiando a Velázquez"
+        }
+      ],
+      "curiosities": [
+        "Cortés invirtió toda su fortuna personal —y se endeudó hasta el cuello— en armar la expedición. Hipotecó sus encomiendas, pidió prestado a comerciantes y amigos, y empeñó hasta su hacienda. Era una apuesta a todo o nada: si fracasaba, no le quedaba nada a lo que volver.",
+        "La flota de Cortés era modesta para la empresa que tenía por delante: 11 naves, la mayor de 100 toneladas, 508 soldados (según Bernal), 16 caballos, 10 cañones de bronce y 4 falconetes. Con este ejército diminuto pretendía internarse en un continente desconocido.",
+        "Velázquez intentó detener a Cortés enviando un emisario al puerto de Trinidad, pero los hombres de Cortés ya le eran más fieles al capitán que al gobernador. La astucia legal de Cortés se demostró aquí: se cuidó de que la expedición pareciera legítima en todo momento, invocando órdenes escritas que Velázquez ya había firmado.",
+        "La relación entre Cortés y Velázquez era compleja: eran compadres (Velázquez había sido padrino de una de las hijas de Cortés), pero la ambición de ambos hacía imposible la lealtad permanente."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Theodor_De_Bry_-_Central_America_1594.jpg",
+          "alt": "Mapa de América Central y el Caribe, Theodor De Bry, 1594",
+          "usage": "hero",
+          "width": 1200,
+          "height": 900
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/DiegoVelazquezCuellar.jpg",
+          "alt": "Retrato de Diego Velázquez de Cuéllar",
+          "usage": "inline",
+          "width": 800,
+          "height": 1000
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Conquista_de_M%C3%A9xico_%28Tabla_1%29_-_Manda_Cort%C3%A9s_echar_los_Naos_a_pique%2C_come_con_embajadores_de_Moctezuma%2C_Miguel_Gonz%C3%A1lez_%26_Juan_Gonz%C3%A1lez_%281698%29.png",
+          "alt": "Biombo de la Conquista de México (1698)",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "chapter-3",
+      "number": 3,
+      "title": "Quemando el camino atrás",
+      "subtitle": "1519",
+      "accentColor": "--accent-gold",
+      "bgColor": "--bg-primary",
+      "narrative": [
+        "La flota tocó Cozumel a finales de febrero de 1519, y allí ocurrió el primer golpe de fortuna que marcaría toda la empresa. Los españoles rescataron a Jerónimo de Aguilar, un náufrago sevillano que llevaba ocho años viviendo entre los mayas y hablaba su lengua con fluidez. Su compañero de naufragio, Gonzalo Guerrero, se negó a volver: se había casado con una mujer maya, tenía hijos, era cacique y capitán de guerra. «Hermano Aguilar —le dijo—, yo soy casado y tengo tres hijos, y tiénenme por cacique y capitán cuando hay guerras.» Guerrero eligió el Nuevo Mundo; Aguilar eligió servir de puente entre dos civilizaciones.",
+        "Tras costear Yucatán y vencer a los indígenas en la batalla de Centla —donde los caballos aterrorizaron a guerreros que jamás habían visto semejante bestia—, los caciques de Tabasco entregaron a Cortés veinte mujeres esclavas como ofrenda de paz. Entre ellas venía una joven noble náhuatl que había sido vendida como esclava a los mayas: Malinalli, bautizada como Marina, conocida por la historia como La Malinche. Hablaba náhuatl y maya. Con Aguilar traduciendo del maya al español, y Marina del náhuatl al maya, Cortés tenía de pronto una cadena de traducción que le abría las puertas de un imperio. Bernal Díaz escribiría después: «Sin doña Marina no podíamos entender la lengua de la Nueva España y México.»",
+        "En la costa del Golfo, Cortés ejecutó su golpe maestro legal: fundó la Villa Rica de la Vera Cruz el 10 de julio de 1519, creando un cabildo que le otorgaba autoridad directa del Rey, independiente de Velázquez. Era un acto audaz de legalismo: si la Corona reconocía al cabildo, Cortés dejaba de ser un subordinado rebelde para convertirse en un capitán legítimo. La pluma de Salamanca al servicio de la espada.",
+        "Pero la jugada definitiva estaba por venir. Consciente de que muchos de sus hombres —partidarios de Velázquez— querían regresar a Cuba, Cortés tomó la decisión que lo inmortalizó en la historia: ordenó barrenar las naves. No las quemó, como dice la leyenda; las mandó perforar y hundir, conservando sólo los hierros, clavos, cordajes y velas. Bernal Díaz relata cómo Cortés convenció a sus capitanes de que «no había que pensar sino en el buen esfuerzo y corazón para pelear», porque ya no existía camino de vuelta. Con un acto irreversible, quinientos hombres quedaron atados a la victoria o a la muerte en una tierra desconocida. El Rubicón del Nuevo Mundo acababa de ser cruzado."
+      ],
+      "quotes": [
+        {
+          "text": "Hermano Aguilar, yo soy casado y tengo tres hijos, y tiénenme por cacique y capitán cuando hay guerras; idos vos con Dios, que yo ya tengo labrada la cara y horadadas las orejas. ¿Qué dirán de mí desde que me vean esos españoles ir de esta manera?",
+          "author": "Gonzalo Guerrero (según Bernal Díaz del Castillo)",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. XXIX"
+        },
+        {
+          "text": "Sin doña Marina no podíamos entender la lengua de la Nueva España y México.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. XXXVII"
+        },
+        {
+          "text": "Quiero decir lo de doña Marina, cómo desde su niñez fue gran señora y cacica de pueblos y vasallos; y es de esta manera: que su padre y madre eran señores y caciques de un pueblo que se dice Painala.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. XXXVII"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "Febrero 1519",
+          "event": "Llegada a Cozumel; rescate de Jerónimo de Aguilar, náufrago español que hablaba maya"
+        },
+        {
+          "year": "Marzo 1519",
+          "event": "Batalla de Centla contra los mayas de Tabasco; los caciques entregan 20 mujeres, entre ellas La Malinche"
+        },
+        {
+          "year": "Abril 1519",
+          "event": "Llegada a San Juan de Ulúa; primeros contactos con emisarios de Moctezuma, que envía regalos fastuosos"
+        },
+        {
+          "year": "10 de julio de 1519",
+          "event": "Fundación de la Villa Rica de la Vera Cruz, primer ayuntamiento de América continental"
+        },
+        {
+          "year": "Agosto 1519",
+          "event": "Cortés ordena barrenar (no quemar) las naves para impedir toda retirada"
+        },
+        {
+          "year": "16 de agosto de 1519",
+          "event": "Inicio de la marcha hacia el interior del continente, rumbo a Tenochtitlán"
+        }
+      ],
+      "curiosities": [
+        "Cortés nunca quemó las naves: las mandó barrenar, es decir, perforar los cascos para que se hundieran. La leyenda de la quema nació décadas después, a partir de una pintura exhibida en las exequias de Carlos V en 1559. El mito resultó más poderoso que la realidad.",
+        "Los hijos de Gonzalo Guerrero con su esposa maya son considerados los primeros mestizos de Mesoamérica, nacidos antes de la conquista de México. Guerrero murió en 1536 luchando contra los españoles del lado de los mayas.",
+        "La cadena de traducción Malinche-Aguilar era extraordinariamente lenta: Cortés hablaba en español a Aguilar, quien traducía al maya para Malinche, quien a su vez traducía al náhuatl para los mexicas. Con el tiempo, Marina aprendió español directamente y Aguilar quedó en segundo plano.",
+        "Los regalos que Moctezuma envió a Cortés en la costa —dos discos enormes de oro y plata representando el sol y la luna, plumas de quetzal, jades— pretendían disuadirlo de avanzar. Tuvieron el efecto contrario: encendieron la codicia de los españoles como gasolina sobre fuego."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Spanish_Galleon_Firing_its_Cannon.jpg",
+          "alt": "Galeón español disparando sus cañones",
+          "usage": "hero",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Hern%C3%A1n_Cort%C3%A9s_and_La_Malinche_1576_Dur%C3%A1n_Codex.jpg",
+          "alt": "Hernán Cortés y La Malinche, Códice Durán (1576)",
+          "usage": "inline",
+          "width": 800,
+          "height": 900
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Cortez_%26_La_Malinche.jpg",
+          "alt": "Cortés y La Malinche, pintura histórica",
+          "usage": "gallery",
+          "width": 1000,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Cortes%2C_la_llegada.jpg",
+          "alt": "La llegada de Cortés a las costas de México",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "chapter-4",
+      "number": 4,
+      "title": "Camino al corazón del imperio",
+      "subtitle": "1519",
+      "accentColor": "--accent-turquoise",
+      "bgColor": "--bg-warm",
+      "narrative": [
+        "El camino desde la costa tropical hasta el altiplano fue un ascenso en todos los sentidos: geográfico, político y emocional. Cortés y sus hombres subieron de las tierras calientes al frío de las sierras, cruzando paisajes que ningún europeo había contemplado. Pero la verdadera conquista comenzó antes de que se disparara un solo tiro contra los mexicas: fue diplomática. Los totonacas de Cempoala, hartos del yugo tributario de Moctezuma, ofrecieron a Cortés una alianza. El extremeño comprendió al instante la debilidad del imperio mexica: no era un estado unificado, sino una confederación sostenida por el terror y el tributo. Había grietas, y Cortés sabía dónde meter la cuña.",
+        "El encuentro con Tlaxcala fue la prueba de fuego. Los tlaxcaltecas, guerreros feroces y enemigos mortales de los mexicas, atacaron primero a los españoles en una serie de batallas brutales entre el 2 y el 5 de septiembre de 1519. El joven general Xicohténcatl el Joven quería aniquilarlos; los ancianos del senado tlaxcalteca prefirieron la prudencia. Tras derrotar a los tlaxcaltecas en campo abierto —donde los caballos, la artillería y las tácticas europeas resultaron devastadoras—, Cortés ofreció paz y alianza. Los cuatro señores de Tlaxcala —Xicohténcatl el Viejo, Maxixcatzin, Citlalpopocatzin y Hueyolotzin— aceptaron. Fue la alianza más decisiva de toda la conquista: sin Tlaxcala, Cortés no habría tomado nunca Tenochtitlán.",
+        "La siguiente estación fue Cholula, la ciudad sagrada del dios Quetzalcóatl. Moctezuma había invitado a Cortés a desviarse allí, supuestamente como gesto de hospitalidad. Pero Malinche descubrió una trampa: los cholultecas planeaban una emboscada con apoyo de veinte mil guerreros mexicas apostados fuera de la ciudad. El 18 de octubre de 1519, Cortés convocó a los nobles y sacerdotes cholultecas en la plaza principal y dio la orden. En menos de dos horas, los españoles y sus aliados tlaxcaltecas masacraron a miles de personas —las cifras varían entre tres mil y seis mil—. La matanza de Cholula fue un acto de terror calculado cuya noticia corrió por todo el imperio como un escalofrío. Las ciudades del camino empezaron a rendirse sin combatir.",
+        "Y entonces, el 8 de noviembre de 1519, tras descender del paso entre los volcanes Popocatépetl e Iztaccíhuatl, los españoles contemplaron por primera vez el Valle de México. Abajo, brillando como un espejismo bajo el sol de la mañana, se extendía una red de lagos sobre la que flotaba la ciudad más grande del mundo occidental: Tenochtitlán. Bernal Díaz del Castillo nunca olvidó ese momento."
+      ],
+      "quotes": [
+        {
+          "text": "Y desde que vimos tantas ciudades y villas pobladas en el agua, y en tierra firme otras grandes poblazones, y aquella calzada tan derecha y por nivel como iba a México, nos quedamos admirados, y decíamos que parecía a las cosas de encantamiento que cuentan en el libro de Amadís, por las grandes torres y cúes y edificios que tenían dentro en el agua, y todos de calicanto, y aun algunos de nuestros soldados decían que si aquello que veían si era entre sueños. Y no es de maravillar que yo escriba aquí de esta manera, porque hay mucho que ponderar en ello que no sé cómo lo cuente: ver cosas nunca oídas, ni aun soñadas, como veíamos.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. LXXXVII"
+        },
+        {
+          "text": "En la Nueva España hubo y se cometieron ciertos señalados y en particular grandes estragos, crueldades, matanzas y destruiciones.",
+          "author": "Fray Bartolomé de las Casas",
+          "source": "Brevísima relación de la destrucción de las Indias, 'De la Nueva España'"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "Agosto 1519",
+          "event": "Alianza con los totonacas de Cempoala, primer pueblo sometido al imperio mexica que se rebela"
+        },
+        {
+          "year": "2-5 septiembre 1519",
+          "event": "Batallas contra los tlaxcaltecas; tras la derrota militar, Tlaxcala acepta la alianza con Cortés"
+        },
+        {
+          "year": "18 de octubre 1519",
+          "event": "Matanza de Cholula: miles de nobles, sacerdotes y civiles masacrados en la plaza principal de la ciudad sagrada"
+        },
+        {
+          "year": "Noviembre 1519",
+          "event": "Paso entre los volcanes Popocatépetl e Iztaccíhuatl; Diego de Ordaz asciende al cráter del Popocatépetl"
+        },
+        {
+          "year": "8 de noviembre 1519",
+          "event": "Primera vista de Tenochtitlán desde el paso de montaña; los españoles contemplan la ciudad lacustre"
+        }
+      ],
+      "curiosities": [
+        "Diego de Ordaz, uno de los capitanes de Cortés, subió al cráter del volcán Popocatépetl —a más de 5.400 metros de altura— con dos compañeros, algo inaudito para europeos de la época. Lo hizo para demostrar valentía y observar el camino hacia Tenochtitlán. Más tarde, Carlos V le concedió un volcán humeante como blasón de armas.",
+        "La alianza con Tlaxcala fue posible porque este señorío llevaba décadas bloqueado económicamente por los mexicas: no tenían acceso al algodón, a la sal ni a otros productos básicos. Su odio a Moctezuma era tan profundo que prefirieron aliarse con invasores desconocidos antes que seguir soportando el cerco.",
+        "Cholula era una de las ciudades más sagradas de Mesoamérica, sede del culto a Quetzalcóatl, con una pirámide más ancha que la de Giza. La matanza en su recinto sagrado envió un mensaje aterrador a todo el imperio: ni los dioses podían proteger a quienes se opusieran a los españoles.",
+        "Moctezuma envió al menos cinco embajadas sucesivas a Cortés durante su marcha, cada una con regalos más lujosos, intentando sobornarlo para que diera la vuelta. Cada vez, el efecto era el contrario."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Iztaccihuatl-Popocatepetl_en_vista_a%C3%A9rea.jpg",
+          "alt": "Vista aérea de los volcanes Iztaccíhuatl y Popocatépetl",
+          "usage": "hero",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Popocatepetl_pasodecortez_cut.JPG",
+          "alt": "Popocatépetl desde el Paso de Cortés",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Aztec_Indians_Mexico_Tlaxcalan_Cortez-1000x873.jpg",
+          "alt": "Guerreros tlaxcaltecas aliados con Cortés",
+          "usage": "inline",
+          "width": 1000,
+          "height": 873
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Lienzo_de_Tlaxcala_Teciquauhtitla.jpg",
+          "alt": "Lienzo de Tlaxcala",
+          "usage": "gallery",
+          "width": 800,
+          "height": 1000
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Matanza_de_Cholula_-_Lienzo_de_Tlaxcala.jpg",
+          "alt": "Matanza de Cholula, Lienzo de Tlaxcala",
+          "usage": "gallery",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Codex_azcatitlan222.jpg",
+          "alt": "Códice Azcatitlan",
+          "usage": "gallery",
+          "width": 1200,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "id": "chapter-5",
+      "number": 5,
+      "title": "En la ciudad de los dioses",
+      "subtitle": "1519 — 1520",
+      "accentColor": "--accent-gold",
+      "bgColor": "--bg-warm",
+      "narrative": [
+        "El 8 de noviembre de 1519, Hernán Cortés y sus hombres entraron en Tenochtitlán por la calzada de Iztapalapa, flanqueados por miles de guerreros mexicas que los observaban en silencio. Al final de la calzada, bajo un palio de plumas verdes bordado de oro, plata y perlas, esperaba Moctezuma Xocoyotzin, señor del mundo conocido. Se apeó de sus ricas andas sostenido por grandes señores, y cuando Cortés quiso abrazarlo, los nobles mexicas le detuvieron el brazo: nadie tocaba al tlatoani. Fue un encuentro entre dos mundos que no sabían que estaban a punto de destruirse mutuamente.",
+        "Lo que vieron los españoles los dejó sin palabras. Tenochtitlán era una metrópoli de entre doscientas mil y trescientas mil almas —más grande que cualquier ciudad de Europa en ese momento, salvo quizá Constantinopla—. Construida sobre islotes artificiales en el lago de Texcoco, conectada a tierra firme por tres enormes calzadas, con acueductos de agua dulce, jardines flotantes, templos piramidales que tocaban el cielo y un sistema de canales que haría enrojecer a Venecia. Cortés, en su Segunda Carta de Relación, la describió como «tan grande como Sevilla o Córdoba», pero se quedaba corto. El mercado de Tlatelolco, que funcionaba a diario con sesenta mil compradores y vendedores, ocupaba una plaza «tan grande como dos veces la ciudad de Salamanca». Se vendía de todo: oro, plata, piedras preciosas, plumas, algodón, cacao, maíz, carne, pescado, cerámica, esclavos, medicinas.",
+        "Durante semanas, los españoles vivieron como huéspedes atónitos en palacios de piedra labrada. Pero Cortés no había venido de visita. A los pocos días del encuentro, tomó la decisión más audaz y temeraria de toda la conquista: capturó a Moctezuma en su propio palacio, usando como pretexto un ataque a españoles en la costa. El tlatoani más poderoso de Mesoamérica se convirtió en prisionero de cuatrocientos hombres extranjeros, en el corazón de su propia capital, rodeado por cientos de miles de súbditos. Era un golpe de una audacia que rayaba en la locura, pero durante meses funcionó: Moctezuma, paralizado entre la religión, la diplomacia y el miedo, gobernaba como títere mientras Cortés movía los hilos.",
+        "Era un equilibrio imposible, y todos lo sabían. La ciudad entera era una caldera a punto de hervir. Los sacerdotes clamaban contra los extranjeros. Los señores mexicas susurraban conspiración. Y en la costa, una nueva amenaza se acercaba: Pánfilo de Narváez, enviado por Velázquez con una fuerza muy superior para arrestar a Cortés. La trampa de oro y obsidiana estaba a punto de cerrarse."
+      ],
+      "quotes": [
+        {
+          "text": "Se apeó el gran Montezuma de las andas, y traíanle del brazo aquellos grandes caciques debajo de un palio muy riquísimo a maravilla, y la color de plumas verdes con grandes labores de oro, con mucha argentería y perlas y piedras chalchihuis, que era cosa de mucho que mirar.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. LXXXVIII"
+        },
+        {
+          "text": "Tiene esta ciudad muchas plazas, donde hay continuo mercado y trato de comprar y vender. Tiene otra plaza tan grande como dos veces la ciudad de Salamanca, toda cercada de portales alrededor, donde hay cotidianamente arriba de sesenta mil ánimas comprando y vendiendo.",
+          "author": "Hernán Cortés",
+          "source": "Segunda Carta de Relación al Emperador Carlos V, 30 de octubre de 1520"
+        },
+        {
+          "text": "Esta gran ciudad de Temixtitán está fundada en esta laguna salada, y desde la tierra firme hasta el cuerpo de la dicha ciudad, por cualquiera parte que quisieren entrar a ella, hay dos leguas.",
+          "author": "Hernán Cortés",
+          "source": "Segunda Carta de Relación al Emperador Carlos V, 30 de octubre de 1520"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "8 de noviembre 1519",
+          "event": "Entrada en Tenochtitlán; encuentro ceremonial entre Cortés y Moctezuma en la calzada de Iztapalapa"
+        },
+        {
+          "year": "14 de noviembre 1519",
+          "event": "Cortés captura a Moctezuma en su palacio, usando como pretexto el ataque a españoles en Nautla"
+        },
+        {
+          "year": "Noviembre-Diciembre 1519",
+          "event": "Los españoles exploran Tenochtitlán, visitan el Templo Mayor, el mercado de Tlatelolco y los palacios"
+        },
+        {
+          "year": "Abril 1520",
+          "event": "Pánfilo de Narváez llega a la costa con 19 naves y 1.400 hombres, enviado por Velázquez para arrestar a Cortés"
+        },
+        {
+          "year": "Mayo 1520",
+          "event": "Cortés deja a Pedro de Alvarado al mando en Tenochtitlán y marcha a la costa a enfrentar a Narváez; lo derrota en Cempoala"
+        }
+      ],
+      "curiosities": [
+        "Tenochtitlán en 1519 tenía entre 200.000 y 300.000 habitantes. En comparación, Londres tenía unos 50.000, Sevilla unos 60.000 y París alrededor de 200.000. Solo Constantinopla rivalizaba con la capital mexica en tamaño.",
+        "El mercado de Tlatelolco tenía jueces que vigilaban las transacciones y castigaban a los tramposos. El cacao servía como moneda de cambio. Existían barberos, boticarios e incluso letrinas públicas. Los conquistadores no habían visto nada semejante en Europa.",
+        "Moctezuma fue cautivo en condiciones extrañamente lujosas: seguía recibiendo a sus consejeros, comía manjares servidos por doncellas, jugaba al totoloque (un juego de azar) con Cortés y mantenía sus rituales religiosos. Era un prisionero que seguía pareciendo emperador.",
+        "Cuando Cortés marchó a la costa a enfrentar a Narváez, dejó apenas 120 españoles bajo el mando de Pedro de Alvarado para controlar una ciudad de cientos de miles de personas. La proporción era de más de mil mexicas por cada español."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/The_great_Tenochtitlan.JPG",
+          "alt": "La Gran Tenochtitlán, mural de Diego Rivera",
+          "usage": "hero",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/La_Gran_Tenochtitlan.JPG",
+          "alt": "Mercado de Tlatelolco, mural de Diego Rivera",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Map_of_Tenochtitlan%2C_1524.jpg",
+          "alt": "Mapa de Tenochtitlán, 1524",
+          "usage": "inline",
+          "width": 1000,
+          "height": 1000
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/261-Meeting_of_CORTEZ_and_MONTEZUMA.jpg",
+          "alt": "Encuentro entre Cortés y Moctezuma",
+          "usage": "inline",
+          "width": 1000,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Retrato_de_Moctezuma_II.png",
+          "alt": "Retrato de Moctezuma II",
+          "usage": "inline",
+          "width": 800,
+          "height": 1000
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Recinto_Templo_Mayor.JPG",
+          "alt": "Reconstrucción del Templo Mayor",
+          "usage": "gallery",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/TenochtitlanModel.JPG",
+          "alt": "Maqueta de Tenochtitlán",
+          "usage": "gallery",
+          "width": 1200,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "id": "chapter-6",
+      "number": 6,
+      "title": "La Noche Triste",
+      "subtitle": "1520",
+      "accentColor": "--accent-blood",
+      "bgColor": "--bg-primary",
+      "narrative": [
+        "Todo se derrumbó por la crueldad de un solo hombre. En ausencia de Cortés, Pedro de Alvarado —rubio, impulsivo, al que los mexicas llamaban Tonatiuh, «el Sol»— ordenó una masacre durante la fiesta de Tóxcatl en el recinto del Templo Mayor. El 20 de mayo de 1520, mientras la nobleza mexica celebraba danzas rituales desarmada y ataviada con plumas y joyas, los españoles cerraron las salidas del patio sagrado y abrieron fuego. Mataron a cientos de nobles, guerreros y sacerdotes. La sangre corrió por las escalinatas del Templo Mayor. Tenochtitlán estalló en una revuelta que ya no se detendría.",
+        "Cortés regresó victorioso de la costa —había derrotado a Narváez y sumado a la mayoría de sus hombres a su propia tropa—, pero encontró una ciudad en llamas de ira. Entró el 24 de junio con 1.300 españoles, pero esta vez nadie salió a recibirlo. Las calles estaban vacías, los mercados cerrados, el silencio era más amenazante que cualquier grito de guerra. Intentó que Moctezuma calmara a su pueblo, y el tlatoani subió a la azotea para dirigirse a la multitud enfurecida. Lo que ocurrió después es uno de los misterios más debatidos de la historia: según la versión española, sus propios súbditos lo apedrearon, y murió tres días después a causa de las heridas. Según las fuentes indígenas, fueron los españoles quienes lo asesinaron, posiblemente estrangulándolo. El Códice Moctezuma lo muestra con una soga al cuello. Sea como fuere, murió el 29 de junio de 1520, y con él murió toda posibilidad de solución pacífica.",
+        "La noche del 30 de junio de 1520. Lluvia. Oscuridad. Cortés dio la orden de huir. Los españoles cargaron todo el oro que pudieron —muchos se llenaron los jubones de barras y joyas— y salieron por la calzada de Tlacopan bajo un puente portátil de madera. Pero los vigías mexicas los descubrieron. El sonido de los caracoles retumbó en la noche, y miles de guerreros en canoas cayeron sobre la columna en fuga. Los puentes se rompieron, las acequias se tragaron a hombres cargados de oro que se hundían como piedras. La retaguardia fue aniquilada. El caos fue absoluto.",
+        "Al amanecer, los supervivientes llegaron a Tacuba. Bernal Díaz del Castillo dejó grabado el momento para siempre: Cortés se paró, y aun se sentó, no a descansar, «sino a hacer duelo sobre los muertos y que vivos quedaban, y pensar y decir el baque que la fortuna le daba con perder tantos amigos, tanto tesoro, tanto mando, tan grande ciudad y reino». Las pérdidas fueron catastróficas: más de 600 españoles muertos, cerca de mil aliados tlaxcaltecas, la mayoría de los caballos, toda la artillería, todo el oro. Fue la mayor derrota española en toda la conquista del Nuevo Mundo."
+      ],
+      "quotes": [
+        {
+          "text": "Cortés se paró, y aun se sentó, y no a descansar, sino a hacer duelo sobre los muertos y que vivos quedaban, y pensar y decir el baque que la fortuna le daba con perder tantos amigos, tanto tesoro, tanto mando, tan grande ciudad y reino.",
+          "author": "Bernal Díaz del Castillo",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. CXXVIII"
+        },
+        {
+          "text": "No solamente lloraba la desventura presente, mas temía la venidera, por estar todos heridos, por no saber a dónde ir, y por no tener cierta la guarida y amistad de Tlaxcala.",
+          "author": "Francisco López de Gómara",
+          "source": "Historia general de las Indias, Cap. CIX"
+        },
+        {
+          "text": "Entraron en la Nueva España ciertos tiranos españoles cruelísimos, y pusieron matanzas y estragos grandísimos en una ciudad que tenía en sí más de treinta mil vecinos.",
+          "author": "Fray Bartolomé de las Casas",
+          "source": "Brevísima relación de la destrucción de las Indias, 'De la Nueva España'"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "20 de mayo 1520",
+          "event": "Masacre del Templo Mayor: Pedro de Alvarado ordena matar a la nobleza mexica desarmada durante la fiesta de Tóxcatl"
+        },
+        {
+          "year": "24 de junio 1520",
+          "event": "Cortés regresa a Tenochtitlán con refuerzos tras derrotar a Narváez; encuentra la ciudad sublevada"
+        },
+        {
+          "year": "29 de junio 1520",
+          "event": "Muerte de Moctezuma Xocoyotzin, en circunstancias disputadas entre las fuentes españolas e indígenas"
+        },
+        {
+          "year": "30 de junio - 1 de julio 1520",
+          "event": "La Noche Triste: huida nocturna por la calzada de Tlacopan; más de 600 españoles y mil aliados muertos"
+        },
+        {
+          "year": "7 de julio 1520",
+          "event": "Batalla de Otumba: los supervivientes, exhaustos y heridos, derrotan a un ejército mexica en campo abierto"
+        }
+      ],
+      "curiosities": [
+        "Cortés nunca lloró bajo un árbol de ahuehuete, como dice la leyenda popular. Ningún cronista afirma que se sentara al pie de un árbol. Lo que Bernal Díaz relata es que se sentó —probablemente en un escalón o una piedra— a hacer duelo de pie y sentado por los muertos. El famoso 'Árbol de la Noche Triste' en Popotla es una tradición posterior, no un hecho documentado.",
+        "Muchos soldados españoles murieron ahogados no por el agua, sino por el peso del oro que llevaban encima. Los que sobrevivieron fueron los que tiraron sus riquezas. La codicia mató más que las macanas mexicas esa noche.",
+        "Cuitláhuac, hermano de Moctezuma y nuevo tlatoani, organizó la resistencia pero murió de viruela apenas 80 días después de ascender al poder. La epidemia, traída involuntariamente por un soldado negro de la tropa de Narváez, mató a millones de mexicas y fue tan decisiva como cualquier batalla.",
+        "En la batalla de Otumba, una semana después de la Noche Triste, los españoles supervivientes —heridos, sin artillería, sin apenas caballos— vencieron a un ejército mexica muy superior cuando Cortés cargó directamente contra el portaestandarte enemigo y lo mató. Al caer el estandarte, los guerreros mexicas se dispersaron según su tradición militar."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/The_Sad_Night_%28Noche_Triste%29_%28Conquest_of_Mexico%29_Painting.jpg",
+          "alt": "La Noche Triste, pintura de la Conquista",
+          "usage": "hero",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Spanish_Conquistadors_in_retreat_from_Aztec_Warriors_after_La_Noche_Triste.jpg",
+          "alt": "Conquistadores en retirada tras la Noche Triste",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/ROHM_D225_Noche_triste_aztecs_rise_against_the_conquistadors.jpg",
+          "alt": "Los aztecas se levantan contra los conquistadores",
+          "usage": "gallery",
+          "width": 1000,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Arbol_de_la_Noche_Triste_-_Popotla_-_Ciudad_de_Mexico.JPG",
+          "alt": "Árbol de la Noche Triste en Popotla",
+          "usage": "gallery",
+          "width": 800,
+          "height": 1000
+        }
+      ]
+    },
+    {
+      "id": "chapter-7",
+      "number": 7,
+      "title": "Cenizas y gloria",
+      "subtitle": "1520 — 1547",
+      "accentColor": "--accent-stone",
+      "bgColor": "--bg-primary",
+      "narrative": [
+        "Los tlaxcaltecas los recibieron. Contra todo pronóstico, contra toda lógica, los cuatro señores de Tlaxcala honraron su alianza con aquellos fantasmas ensangrentados que arrastraban los pies por sus calles. Fue el momento más vulnerable de Cortés —y el que demostró que su mayor conquista no había sido militar, sino diplomática—. Durante meses, los españoles se recuperaron en Tlaxcala mientras Cortés planificaba lo imposible: regresar y tomar por la fuerza la ciudad más poderosa de América. Para ello, diseñó una estrategia sin precedentes: construir trece bergantines —barcos de guerra— en las montañas de Tlaxcala y transportarlos desmontados hasta el lago de Texcoco para montar una armada en medio de un continente.",
+        "El 26 de mayo de 1521 comenzó el sitio de Tenochtitlán. Fue uno de los asedios más largos y brutales de la historia: tres meses de combate casa por casa, canal por canal, calzada por calzada. Cortés cortó el acceso al agua potable, bloqueó las calzadas y usó los bergantines para dominar el lago, destruyendo las canoas de suministro. Los defensores, liderados por el joven tlatoani Cuauhtémoc —de apenas veinticinco años—, resistieron con una ferocidad que asombró a los propios españoles. La viruela, el hambre y la sed hacían su trabajo silencioso mientras las macanas y las espadas hacían el suyo a plena luz del día. La ciudad que había maravillado a los conquistadores fue destruida manzana por manzana.",
+        "El 13 de agosto de 1521 —día de San Hipólito—, Cuauhtémoc fue capturado mientras intentaba huir en una canoa con su familia y su tesoro. Un bergantín español lo interceptó en el lago. «Señor Malinche —le dijo al ser presentado ante Cortés—, ya he hecho lo que estoy obligado en defensa de mi ciudad; toma ese puñal y mátame con él.» Tenochtitlán había caído. Sobre sus ruinas, Cortés fundaría la Ciudad de México.",
+        "Lo que vino después fue anticlímax y amargura. Cortés fue nombrado gobernador y capitán general de Nueva España, pero pronto la Corona le recortó el poder enviando audiencias y virreyes. En 1524, se lanzó a una desastrosa expedición a Honduras para castigar a Cristóbal de Olid, que se había rebelado: dos años de sufrimiento en la selva que casi lo matan y destruyeron su reputación. De vuelta en México, le esperaba un juicio de residencia. Viajó a España en 1528 buscando justicia y reconocimiento; Carlos V lo recibió, le dio el título de Marqués del Valle de Oaxaca, pero no le devolvió el gobierno. Regresó a México, volvió a España, participó en la desastrosa expedición a Argel en 1541, y pasó sus últimos años litigando contra la burocracia imperial, enfermo, endeudado y olvidado. El 2 de diciembre de 1547, en la casa de un amigo en Castilleja de la Cuesta, cerca de Sevilla, Hernán Cortés murió de pleuresía a los sesenta y dos años. Prácticamente solo. Lejos del mundo que había conquistado y que no lo dejaron gobernar."
+      ],
+      "quotes": [
+        {
+          "text": "Señor Malinche, ya he hecho lo que estoy obligado en defensa de mi ciudad y vasallos, y no puedo más; y pues vengo por fuerza y preso ante tu persona y poder, toma ese puñal que tienes en la cinta y mátame luego con él.",
+          "author": "Cuauhtémoc (según Bernal Díaz del Castillo)",
+          "source": "Historia verdadera de la conquista de la Nueva España, Cap. CLVI"
+        },
+        {
+          "text": "Prendido el rey, cesó la guerra, la cual plugo a Dios nuestro Señor que se acabase el martes, día de San Hipólito, trece de agosto de mil quinientos veinte y un años.",
+          "author": "Hernán Cortés",
+          "source": "Tercera Carta de Relación al Emperador Carlos V, 15 de mayo de 1522"
+        },
+        {
+          "text": "Hicieron matanzas extrañas y señaladas en aquellas tierras y reinos tan grandes que allí hallaron, donde aquellas gentes mansas y pacíficas estaban en sus casas sin ofender a nadie.",
+          "author": "Fray Bartolomé de las Casas",
+          "source": "Brevísima relación de la destrucción de las Indias, 'De la Nueva España'"
+        }
+      ],
+      "keyDates": [
+        {
+          "year": "Julio 1520 - Abril 1521",
+          "event": "Recuperación en Tlaxcala; construcción de 13 bergantines para el asalto lacustre; reclutamiento de aliados indígenas"
+        },
+        {
+          "year": "26 de mayo 1521",
+          "event": "Comienza el sitio de Tenochtitlán: tres columnas por las tres calzadas y los bergantines en el lago"
+        },
+        {
+          "year": "13 de agosto 1521",
+          "event": "Caída de Tenochtitlán: captura de Cuauhtémoc; fin del imperio mexica tras 75 días de asedio"
+        },
+        {
+          "year": "1522-1524",
+          "event": "Cortés gobernador y capitán general de Nueva España; reconstrucción de la Ciudad de México sobre las ruinas"
+        },
+        {
+          "year": "Octubre 1524 - 1526",
+          "event": "Desastrosa expedición a Honduras (Las Hibueras) para castigar la rebelión de Cristóbal de Olid"
+        },
+        {
+          "year": "1528",
+          "event": "Primer viaje a España; Carlos V le concede el título de Marqués del Valle de Oaxaca pero no le devuelve el gobierno"
+        },
+        {
+          "year": "1541",
+          "event": "Participa en la fracasada expedición imperial contra Argel; su consejo militar es ignorado por el mando"
+        },
+        {
+          "year": "2 de diciembre 1547",
+          "event": "Muerte en Castilleja de la Cuesta, Sevilla, a los 62 años, de pleuresía, en casa de un amigo, prácticamente en el olvido"
+        }
+      ],
+      "curiosities": [
+        "Los 13 bergantines fueron construidos en Tlaxcala por el carpintero Martín López, transportados desmontados a lomos de cargadores indígenas por las montañas, y ensamblados en la orilla del lago de Texcoco. Cada bergantín medía unos 13 metros y podía llevar 25 hombres y un cañón. Fue una de las operaciones logísticas más audaces de la historia militar.",
+        "Cortés no conquistó Tenochtitlán solo con españoles: su ejército incluía entre 75.000 y 200.000 guerreros aliados indígenas (tlaxcaltecas, texcocanos, cholultecas, totonacas y otros). La caída del imperio mexica fue tanto una guerra civil mesoamericana como una conquista europea.",
+        "Cuauhtémoc tenía apenas 25 años cuando asumió el mando de la defensa. Tras su captura, Cortés lo mantuvo prisionero y lo llevó consigo a la expedición de Honduras, donde lo ejecutó en 1525 acusándolo de conspiración. Es considerado el último emperador azteca y héroe nacional de México.",
+        "Cortés pidió en su testamento que sus restos fueran trasladados a México. Sus huesos fueron movidos al menos ocho veces entre España y México a lo largo de los siglos, y actualmente descansan en la Iglesia de Jesús Nazareno en la Ciudad de México, bajo una placa discreta, sin monumento —un final simbólico para quien tanto buscó la gloria.",
+        "En su lecho de muerte, Cortés estaba litigando contra la Corona por el pago de deudas que la monarquía le debía. El conquistador del imperio más rico de América murió reclamando dinero al rey al que le había entregado un continente."
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/LastDaysofTenochtitlanB.jpg",
+          "alt": "Los últimos días de Tenochtitlán",
+          "usage": "hero",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Brigantines_in_the_Siege_of_Tenochtitlan.jpg",
+          "alt": "Bergantines en el sitio de Tenochtitlán",
+          "usage": "parallax",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Cortes-Hernan-LOC.jpg",
+          "alt": "Retrato de Hernán Cortés, Library of Congress",
+          "usage": "inline",
+          "width": 800,
+          "height": 1000
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/The_Florentine_Codex-_The_Conquest_of_Mexico.png",
+          "alt": "Códice Florentino - Conquista de México",
+          "usage": "gallery",
+          "width": 1000,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Florentine_Codex_IX_Aztec_Warriors.jpg",
+          "alt": "Guerreros aztecas del Códice Florentino",
+          "usage": "gallery",
+          "width": 1000,
+          "height": 800
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Tumba_de_Cort%C3%A9s.JPG",
+          "alt": "Tumba de Hernán Cortés",
+          "usage": "inline",
+          "width": 800,
+          "height": 1000
+        }
+      ]
+    }
+  ]
+}
