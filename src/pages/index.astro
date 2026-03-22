@@ -6,7 +6,11 @@ import Chapter from '../components/Chapter.astro';
 import Quote from '../components/Quote.astro';
 import ParallaxImage from '../components/ParallaxImage.astro';
 import Gallery from '../components/Gallery.astro';
+import Timeline from '../components/Timeline.astro';
 import chaptersData from '../data/chapters.json';
+
+// Chapters that get a timeline (2: Cuba events, 7: last years)
+const timelineChapters = [2, 7];
 ---
 
 <Base>
@@ -40,6 +44,10 @@ import chaptersData from '../data/chapters.json';
           <Quote text={q.text} author={q.author} source={q.source} />
         ))}
 
+        {timelineChapters.includes(ch.number) && ch.keyDates?.length > 0 && (
+          <Timeline dates={ch.keyDates} />
+        )}
+
         {(() => {
           const galleryImages = ch.images?.filter(img => img.usage === 'gallery');
           return galleryImages?.length > 0 ? <Gallery images={galleryImages} /> : null;
@@ -51,7 +59,9 @@ import chaptersData from '../data/chapters.json';
   <script>
     import { initAnimations } from '../scripts/animations.js';
     import { initGalleries } from '../scripts/gallery.js';
+    import { initTimelines } from '../scripts/timeline.js';
     initAnimations();
     initGalleries();
+    initTimelines();
   </script>
 </Base>
