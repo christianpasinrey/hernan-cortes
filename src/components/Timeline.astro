@@ -1,0 +1,156 @@
+---
+interface Props {
+  dates: Array<{ year: string; event: string }>;
+}
+
+const { dates } = Astro.props;
+---
+
+<div class="timeline" data-timeline>
+  <div class="timeline__track">
+    <div class="timeline__line">
+      <div class="timeline__line-fill" data-timeline-fill></div>
+    </div>
+    {dates.map((d, i) => (
+      <div class="timeline__item" data-timeline-item={i}>
+        <div class="timeline__dot"></div>
+        <div class="timeline__content">
+          <span class="timeline__year">{d.year}</span>
+          <p class="timeline__event">{d.event}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .timeline {
+    margin: 4rem 0;
+    padding: 2rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .timeline__track {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    min-width: max-content;
+    padding: 2rem 1rem;
+  }
+
+  .timeline__line {
+    position: absolute;
+    top: 2rem;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: rgba(139, 115, 85, 0.3);
+  }
+
+  .timeline__line-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-gold);
+    transition: width 0.1s linear;
+  }
+
+  .timeline__item {
+    position: relative;
+    min-width: 180px;
+    padding-top: 2rem;
+    opacity: 0.3;
+    transition: opacity 0.3s var(--ease-default);
+  }
+
+  .timeline__item.active {
+    opacity: 1;
+  }
+
+  .timeline__dot {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-stone);
+    background: var(--bg-primary);
+    transition: all 0.3s var(--ease-default);
+  }
+
+  .timeline__item.active .timeline__dot {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+  }
+
+  .timeline__year {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline__event {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 200px;
+  }
+
+  /* Vertical on mobile */
+  @media (max-width: 768px) {
+    .timeline {
+      overflow-x: visible;
+    }
+
+    .timeline__track {
+      flex-direction: column;
+      min-width: auto;
+      padding: 0 0 0 2rem;
+    }
+
+    .timeline__line {
+      top: 0;
+      bottom: 0;
+      left: 0.5rem;
+      right: auto;
+      width: 2px;
+      height: auto;
+    }
+
+    .timeline__line-fill {
+      width: 100%;
+      height: 0%;
+    }
+
+    .timeline__item {
+      min-width: auto;
+      padding-top: 0;
+      padding-left: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .timeline__dot {
+      top: 0;
+      left: -2rem;
+    }
+
+    .timeline__event {
+      max-width: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .timeline__item { opacity: 1; }
+    .timeline__item .timeline__dot {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    .timeline__line-fill { width: 100% !important; height: 100% !important; }
+  }
+</style>
