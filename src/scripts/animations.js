@@ -301,7 +301,12 @@ function initMapRoutes() {
     if (!route) return;
 
     // Get the total path length and set dasharray
-    const pathLength = route.getTotalLength();
+    let pathLength;
+    try {
+      pathLength = route.getTotalLength();
+    } catch (e) {
+      return; // SVG not ready
+    }
     route.style.strokeDasharray = pathLength;
     route.style.strokeDashoffset = pathLength;
 
@@ -469,15 +474,25 @@ function initChapterTransitions() {
   });
 }
 
-// Export init function
+// Export init function — each wrapped in try/catch so one failure doesn't block others
 export function initAnimations() {
-  initHeroAnimation();
-  initFullscreenHeroes();
-  initChapterAnimations();
-  initChapterNav();
-  initChapterEffects();
-  initMapRoutes();
-  initPinnedQuotes();
-  initImageReveal();
-  initChapterTransitions();
+  const fns = [
+    initChapterNav,        // Nav FIRST — most critical for interactivity
+    initHeroAnimation,
+    initFullscreenHeroes,
+    initChapterAnimations,
+    initChapterEffects,
+    initMapRoutes,
+    initPinnedQuotes,
+    initImageReveal,
+    initChapterTransitions,
+  ];
+
+  fns.forEach((fn) => {
+    try {
+      fn();
+    } catch (err) {
+      console.error(`[animations] ${fn.name} failed:`, err);
+    }
+  });
 }
