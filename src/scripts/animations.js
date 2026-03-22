@@ -97,8 +97,73 @@ function initChapterAnimations() {
   });
 }
 
+function initChapterNav() {
+  const nav = document.getElementById('chapter-nav');
+  const dots = document.querySelectorAll('[data-chapter-nav]');
+
+  if (!nav || !dots.length) return;
+
+  // Show/hide nav based on hero visibility
+  ScrollTrigger.create({
+    trigger: '#hero',
+    start: 'top top',
+    end: 'bottom 80%',
+    onLeave: () => nav.classList.add('visible'),
+    onEnterBack: () => nav.classList.remove('visible'),
+  });
+
+  // Sync active dot with visible chapter
+  document.querySelectorAll('[data-chapter]').forEach((section) => {
+    const chapterNum = section.dataset.chapter;
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top center',
+      end: 'bottom center',
+      onEnter: () => setActiveDot(chapterNum),
+      onEnterBack: () => setActiveDot(chapterNum),
+    });
+  });
+
+  function setActiveDot(num) {
+    dots.forEach((dot) => {
+      const isActive = dot.dataset.chapterNav === num;
+      dot.classList.toggle('active', isActive);
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  // Mobile hamburger toggle
+  const toggle = document.getElementById('chapter-nav-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('mobile-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Cerrar navegación' : 'Abrir navegación');
+    });
+
+    // Close on link click
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('mobile-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Smooth scroll via scrollIntoView (not CSS scroll-behavior)
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+}
+
 // Export init function
 export function initAnimations() {
   initHeroAnimation();
   initChapterAnimations();
+  initChapterNav();
 }

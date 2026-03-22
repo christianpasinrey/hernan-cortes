@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import ChapterNav from '../components/ChapterNav.astro';
 import Chapter from '../components/Chapter.astro';
 import Quote from '../components/Quote.astro';
 import ParallaxImage from '../components/ParallaxImage.astro';
@@ -12,6 +13,7 @@ const chapter1 = chaptersData.chapters[0];
 <Base>
   <main>
     <Hero />
+    <ChapterNav />
 
     <Chapter
       id={chapter1.id}
