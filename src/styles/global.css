@@ -213,3 +213,74 @@ blockquote {
   .city-comparison__grid { gap: 1.5rem; }
   .city-comparison__bar { width: 40px; }
 }
+
+/* === Decorative Separators === */
+
+/* Gold line separator between Spanish chapters (1-3) */
+#chapter-1::after,
+#chapter-2::after,
+#chapter-3::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  margin: 4rem auto 0;
+}
+
+/* Mesoamerican greca separator for Aztec chapters (4-5) */
+#chapter-4::after,
+#chapter-5::after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 16px;
+  margin: 4rem auto 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--accent-turquoise) 0px,
+    var(--accent-turquoise) 8px,
+    transparent 8px,
+    transparent 12px,
+    var(--accent-turquoise) 12px,
+    var(--accent-turquoise) 16px,
+    transparent 16px,
+    transparent 24px
+  );
+  opacity: 0.4;
+}
+
+/* Blood red separator for chapter 6 */
+#chapter-6::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-blood), transparent);
+}
+
+/* === Footer === */
+.site-footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(139, 115, 85, 0.2);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.site-footer__back-to-top {
+  display: inline-block;
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin-top: 1rem;
+  transition: color 0.2s;
+}
+
+.site-footer__back-to-top:hover {
+  color: var(--text-primary);
+}

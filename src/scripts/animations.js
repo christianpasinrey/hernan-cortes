@@ -79,21 +79,24 @@ function initChapterAnimations() {
     });
   });
 
-  // Parallax effect on images
-  gsap.utils.toArray('[data-parallax]').forEach((el) => {
-    const img = el.querySelector('img');
-    if (!img) return;
-
-    gsap.to(img, {
-      y: -50,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
-      },
-    });
+  // Parallax effect on images — desktop only (disabled on mobile for performance)
+  ScrollTrigger.matchMedia({
+    '(min-width: 768px)': function() {
+      gsap.utils.toArray('[data-parallax]').forEach((el) => {
+        const img = el.querySelector('img');
+        if (!img) return;
+        gsap.to(img, {
+          y: -50,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        });
+      });
+    },
   });
 }
 
