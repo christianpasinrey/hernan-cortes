@@ -1,8 +1,7 @@
 // src/scripts/animations.js
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 function initHeroAnimation() {
   const letters = document.querySelectorAll('.hero__letter');
@@ -143,31 +142,28 @@ function initChapterNav() {
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('mobile-open');
       toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.setAttribute('aria-label', isOpen ? 'Cerrar navegación' : 'Abrir navegación');
-    });
-
-    // Close on link click
-    nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('mobile-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
     });
   }
 
-  // Smooth scroll on nav click
-  nav.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-    e.preventDefault();
-    e.stopPropagation();
-    const targetId = link.getAttribute('href');
-    const target = document.querySelector(targetId);
-    if (target) {
-      // Use window.scrollTo for maximum compatibility
-      const top = target.offsetTop;
+  // Handle ALL dot clicks — smooth scroll to target chapter
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = dot.getAttribute('href');
+      if (!href) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      // Close mobile menu if open
+      if (nav.classList.contains('mobile-open')) {
+        nav.classList.remove('mobile-open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      // Scroll to the target
+      const top = target.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({ top, behavior: 'smooth' });
-    }
+    });
   });
 }
 

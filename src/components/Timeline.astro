@@ -27,16 +27,14 @@ const { dates } = Astro.props;
   .timeline {
     margin: 4rem 0;
     padding: 2rem 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
   }
 
   .timeline__track {
     position: relative;
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0;
-    min-width: max-content;
     padding: 2rem 1rem;
   }
 
