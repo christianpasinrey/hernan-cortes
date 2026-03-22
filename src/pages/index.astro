@@ -7,6 +7,7 @@ import Quote from '../components/Quote.astro';
 import ParallaxImage from '../components/ParallaxImage.astro';
 import Gallery from '../components/Gallery.astro';
 import Timeline from '../components/Timeline.astro';
+import MapRoute from '../components/MapRoute.astro';
 import chaptersData from '../data/chapters.json';
 
 // Chapters that get a timeline (2: Cuba events, 7: last years)
@@ -39,6 +40,9 @@ const timelineChapters = [2, 7];
         {ch.narrative.map((para) => (
           <p data-animate="fade-up">{para}</p>
         ))}
+
+        {ch.number === 1 && <MapRoute mapId="atlantic" />}
+        {ch.number === 4 && <MapRoute mapId="mexico" />}
 
         {ch.quotes?.map(q => (
           <Quote text={q.text} author={q.author} source={q.source} />

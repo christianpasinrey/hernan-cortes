@@ -284,10 +284,69 @@ function initChapterEffects() {
   }
 }
 
+function initMapRoutes() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('[data-map-route-container]').forEach((container) => {
+    const route = container.querySelector('[data-map-route]');
+    const stops = container.querySelectorAll('[data-map-stop]');
+    const tooltips = container.querySelectorAll('[data-map-tooltip]');
+
+    if (!route) return;
+
+    // Get the total path length and set dasharray
+    const pathLength = route.getTotalLength();
+    route.style.strokeDasharray = pathLength;
+    route.style.strokeDashoffset = pathLength;
+
+    // Animate route drawing
+    gsap.to(route, {
+      strokeDashoffset: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: container,
+        start: 'top 70%',
+        end: 'bottom 50%',
+        scrub: 1,
+      },
+    });
+
+    // Animate stops appearing as path reaches them
+    stops.forEach((stop, i) => {
+      const delay = (i + 1) / (stops.length + 1);
+
+      gsap.to(stop, {
+        opacity: 1,
+        scale: 1.2,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: container,
+          start: `top ${70 - delay * 40}%`,
+          toggleActions: 'play none none reverse',
+        },
+      });
+
+      // Show tooltip when stop appears
+      if (tooltips[i]) {
+        gsap.to(tooltips[i], {
+          opacity: 1,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: container,
+            start: `top ${70 - delay * 40}%`,
+            toggleActions: 'play none none reverse',
+          },
+        });
+      }
+    });
+  });
+}
+
 // Export init function
 export function initAnimations() {
   initHeroAnimation();
   initChapterAnimations();
   initChapterNav();
   initChapterEffects();
+  initMapRoutes();
 }
