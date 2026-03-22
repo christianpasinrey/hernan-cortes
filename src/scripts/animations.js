@@ -161,9 +161,133 @@ function initChapterNav() {
   });
 }
 
+function initChapterEffects() {
+  // Check reduced motion preference
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Chapter 3: Ships sinking
+  const ch3 = document.querySelector('#chapter-3');
+  if (ch3) {
+    const ch3Img = ch3.querySelector('[data-parallax] img');
+    if (ch3Img) {
+      // Add a red overlay div dynamically
+      const overlay = document.createElement('div');
+      overlay.className = 'ships-overlay';
+      ch3Img.parentElement.appendChild(overlay);
+
+      gsap.to(overlay, {
+        opacity: 0.6,
+        scrollTrigger: {
+          trigger: ch3,
+          start: 'top center',
+          end: 'center center',
+          scrub: 1,
+        },
+      });
+
+      gsap.to(ch3Img, {
+        y: 80,
+        scrollTrigger: {
+          trigger: ch3,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: 1,
+        },
+      });
+    }
+  }
+
+  // Chapter 2: Parchment reveal
+  const ch2Content = document.querySelector('#chapter-2 .chapter__content');
+  if (ch2Content) {
+    gsap.fromTo(ch2Content,
+      { clipPath: 'inset(0 0 100% 0)' },
+      {
+        clipPath: 'inset(0 0 0% 0)',
+        scrollTrigger: {
+          trigger: '#chapter-2',
+          start: 'top 60%',
+          end: 'center center',
+          scrub: 1,
+        },
+      }
+    );
+  }
+
+  // Chapter 4: Color transition (already handled by bgColor in Chapter.astro)
+  // Add a smooth body-level transition effect
+  const ch4 = document.querySelector('#chapter-4');
+  if (ch4) {
+    ScrollTrigger.create({
+      trigger: ch4,
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: 1,
+      onUpdate: (self) => {
+        // Gradually shift the body tint
+        const progress = self.progress;
+        document.body.style.backgroundColor = progress > 0.5
+          ? 'var(--bg-warm)'
+          : 'var(--bg-primary)';
+      },
+    });
+  }
+
+  // Chapter 5: Slow zoom on hero image
+  const ch5Img = document.querySelector('#chapter-5 [data-parallax] img');
+  if (ch5Img) {
+    gsap.fromTo(ch5Img,
+      { scale: 1 },
+      {
+        scale: 1.15,
+        scrollTrigger: {
+          trigger: '#chapter-5',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      }
+    );
+  }
+
+  // Chapter 6: Shake effect on text
+  const ch6 = document.querySelector('#chapter-6');
+  if (ch6) {
+    const ch6Texts = ch6.querySelectorAll('p[data-animate]');
+    ch6Texts.forEach((el) => {
+      ScrollTrigger.create({
+        trigger: ch6,
+        start: 'top center',
+        end: 'bottom center',
+        scrub: true,
+        onUpdate: () => {
+          const shakeX = (Math.random() - 0.5) * 4;
+          const shakeY = (Math.random() - 0.5) * 4;
+          gsap.set(el, { x: shakeX, y: shakeY });
+        },
+      });
+    });
+  }
+
+  // Chapter 7: Progressive desaturation
+  const ch7 = document.querySelector('#chapter-7');
+  if (ch7) {
+    gsap.to(ch7, {
+      filter: 'saturate(0.3)',
+      scrollTrigger: {
+        trigger: ch7,
+        start: 'top center',
+        end: 'bottom bottom',
+        scrub: 1,
+      },
+    });
+  }
+}
+
 // Export init function
 export function initAnimations() {
   initHeroAnimation();
   initChapterAnimations();
   initChapterNav();
+  initChapterEffects();
 }

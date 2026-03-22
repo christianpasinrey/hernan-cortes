@@ -44,6 +44,29 @@ const timelineChapters = [2, 7];
           <Quote text={q.text} author={q.author} source={q.source} />
         ))}
 
+        {ch.number === 5 && (
+          <div class="city-comparison" data-animate="fade-up">
+            <h3 style="color: var(--accent-gold); margin-bottom: 2rem; text-align: center;">Población circa 1519</h3>
+            <div class="city-comparison__grid">
+              <div class="city-comparison__item">
+                <div class="city-comparison__bar" style="height: 200px; background: var(--accent-gold);"></div>
+                <span class="city-comparison__name">Tenochtitlán</span>
+                <span class="city-comparison__pop">~200,000</span>
+              </div>
+              <div class="city-comparison__item">
+                <div class="city-comparison__bar" style="height: 100px; background: var(--accent-stone);"></div>
+                <span class="city-comparison__name">París</span>
+                <span class="city-comparison__pop">~100,000</span>
+              </div>
+              <div class="city-comparison__item">
+                <div class="city-comparison__bar" style="height: 50px; background: var(--accent-stone);"></div>
+                <span class="city-comparison__name">Londres</span>
+                <span class="city-comparison__pop">~50,000</span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {timelineChapters.includes(ch.number) && ch.keyDates?.length > 0 && (
           <Timeline dates={ch.keyDates} />
         )}
