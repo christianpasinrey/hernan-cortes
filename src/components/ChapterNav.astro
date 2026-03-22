@@ -2,175 +2,109 @@
 import chaptersData from '../data/chapters.json';
 ---
 
-<nav class="chapter-nav" id="chapter-nav" role="navigation" aria-label="Navegación por capítulos">
-  <ul class="chapter-nav__list">
+<nav id="chapter-nav" role="navigation" aria-label="Navegación por capítulos" style="position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.4s ease;">
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin:0;padding:0;">
     {chaptersData.chapters.map((ch) => (
-      <li class="chapter-nav__item">
+      <li style="list-style:none;">
         <a
           href={`#${ch.id}`}
-          class="chapter-nav__dot"
-          data-chapter-nav={ch.number}
+          class="cnav-dot"
+          data-chapter-nav={String(ch.number)}
           aria-label={`Capítulo ${ch.number}: ${ch.title}`}
           title={`${String(ch.number).padStart(2, '0')} — ${ch.title}`}
+          style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(139,115,85,0.5);background:rgba(10,10,10,0.8);cursor:pointer;text-decoration:none;color:#b8b0a0;font-family:Georgia,serif;font-size:0.6rem;letter-spacing:0.05em;transition:all 0.3s ease;"
         >
-          <span class="chapter-nav__label" aria-hidden="true">
-            {String(ch.number).padStart(2, '0')}
-          </span>
+          {String(ch.number).padStart(2, '0')}
         </a>
       </li>
     ))}
   </ul>
 </nav>
 
-<!-- Self-contained nav script — no dependency on GSAP or animations.js -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('chapter-nav');
     if (!nav) return;
 
-    const dots = nav.querySelectorAll('.chapter-nav__dot');
+    const dots = nav.querySelectorAll('.cnav-dot');
 
-    // Show nav after scrolling past the hero
+    // Show nav after scrolling past hero
     const hero = document.getElementById('hero');
     if (hero) {
-      const observer = new IntersectionObserver(
+      const obs = new IntersectionObserver(
         ([entry]) => {
-          nav.classList.toggle('visible', !entry.isIntersecting);
+          if (!entry.isIntersecting) {
+            nav.style.opacity = '1';
+            nav.style.pointerEvents = 'auto';
+          } else {
+            nav.style.opacity = '0';
+            nav.style.pointerEvents = 'none';
+          }
         },
         { threshold: 0.1 }
       );
-      observer.observe(hero);
+      obs.observe(hero);
     } else {
-      // No hero? Show nav immediately
-      nav.classList.add('visible');
+      nav.style.opacity = '1';
+      nav.style.pointerEvents = 'auto';
     }
 
-    // Click handler for each dot
+    // Click → scroll to chapter
     dots.forEach((dot) => {
       dot.addEventListener('click', (e) => {
         e.preventDefault();
-        const href = dot.getAttribute('href');
-        const target = document.querySelector(href);
+        const target = document.querySelector(dot.getAttribute('href'));
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+
+      // Hover styles
+      dot.addEventListener('mouseenter', () => {
+        dot.style.borderColor = '#c9a84c';
+        dot.style.background = 'rgba(201,168,76,0.2)';
+        dot.style.transform = 'scale(1.2)';
+        dot.style.color = '#c9a84c';
+      });
+      dot.addEventListener('mouseleave', () => {
+        if (!dot.classList.contains('active')) {
+          dot.style.borderColor = 'rgba(139,115,85,0.5)';
+          dot.style.background = 'rgba(10,10,10,0.8)';
+          dot.style.transform = 'scale(1)';
+          dot.style.color = '#b8b0a0';
+        }
+      });
     });
 
-    // Update active dot on scroll
+    // Active dot tracking on scroll
     const chapters = document.querySelectorAll('[data-chapter]');
-    const updateActiveDot = () => {
-      const scrollY = window.scrollY + window.innerHeight / 2;
+    const updateActive = () => {
+      const mid = window.scrollY + window.innerHeight / 2;
       let activeNum = null;
-
       chapters.forEach((ch) => {
-        const top = ch.offsetTop;
-        const bottom = top + ch.offsetHeight;
-        if (scrollY >= top && scrollY < bottom) {
+        if (mid >= ch.offsetTop && mid < ch.offsetTop + ch.offsetHeight) {
           activeNum = ch.dataset.chapter;
         }
       });
-
       dots.forEach((dot) => {
         const isActive = dot.dataset.chapterNav === activeNum;
         dot.classList.toggle('active', isActive);
+        if (isActive) {
+          dot.style.background = '#c9a84c';
+          dot.style.borderColor = '#c9a84c';
+          dot.style.color = '#0a0a0a';
+          dot.style.fontWeight = '700';
+          dot.style.transform = 'scale(1.1)';
+        } else {
+          dot.style.background = 'rgba(10,10,10,0.8)';
+          dot.style.borderColor = 'rgba(139,115,85,0.5)';
+          dot.style.color = '#b8b0a0';
+          dot.style.fontWeight = '400';
+          dot.style.transform = 'scale(1)';
+        }
       });
     };
-
-    window.addEventListener('scroll', updateActiveDot, { passive: true });
-    updateActiveDot();
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
   });
 </script>
-
-<style is:global>
-  .chapter-nav {
-    position: fixed;
-    right: 1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  .chapter-nav.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .chapter-nav__list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  .chapter-nav__item {
-    list-style: none;
-  }
-
-  .chapter-nav__dot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(139, 115, 85, 0.5);
-    background: rgba(10, 10, 10, 0.7);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    position: relative;
-  }
-
-  .chapter-nav__dot:hover {
-    border-color: var(--accent-gold);
-    background: rgba(201, 168, 76, 0.15);
-    transform: scale(1.15);
-  }
-
-  .chapter-nav__dot.active {
-    background: var(--accent-gold);
-    border-color: var(--accent-gold);
-    transform: scale(1.1);
-  }
-
-  .chapter-nav__label {
-    font-family: var(--font-heading);
-    font-size: 0.55rem;
-    color: var(--text-secondary);
-    letter-spacing: 0.05em;
-    line-height: 1;
-  }
-
-  .chapter-nav__dot:hover .chapter-nav__label {
-    color: var(--accent-gold);
-  }
-
-  .chapter-nav__dot.active .chapter-nav__label {
-    color: var(--bg-primary);
-    font-weight: 700;
-  }
-
-  /* Tablet */
-  @media (max-width: 1024px) {
-    .chapter-nav {
-      right: 0.75rem;
-    }
-    .chapter-nav__dot {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  /* Mobile: hide sidebar, could add hamburger later */
-  @media (max-width: 768px) {
-    .chapter-nav {
-      display: none;
-    }
-  }
-</style>
