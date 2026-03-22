@@ -1,9 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Base>
   <main>
-    <p style="color: var(--text-primary); padding: 2rem;">Cortés — coming soon</p>
+    <Hero />
   </main>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
 </Base>
