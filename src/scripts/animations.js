@@ -1,7 +1,8 @@
 // src/scripts/animations.js
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function initHeroAnimation() {
   const letters = document.querySelectorAll('.hero__letter');
@@ -154,12 +155,20 @@ function initChapterNav() {
     });
   }
 
-  // Smooth scroll via scrollIntoView (not CSS scroll-behavior)
+  // Smooth scroll via GSAP (scrollIntoView conflicts with ScrollTrigger)
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      const targetSelector = link.getAttribute('href');
+      const target = document.querySelector(targetSelector);
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY;
+        gsap.to(window, {
+          scrollTo: { y: y, autoKill: false },
+          duration: 1.2,
+          ease: 'power2.inOut',
+        });
+      }
     });
   });
 }
